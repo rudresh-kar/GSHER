@@ -1,0 +1,817 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+
+  <!-- ==========================================
+       Section 2: Hero Slideshow
+       ========================================== -->
+  <section class="hero" id="home">
+    <div class="hero-slideshow" id="hero-slideshow">
+      <!-- Slide 1 (Active) -->
+      <div class="hero-slide active">
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/ljqarjajotc-mjELR44pxMUPJz7a.jpg"
+          alt="Mindfulness Practice and Yoga">
+      </div>
+      <!-- Slide 2 -->
+      <div class="hero-slide">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/img_0839-AwvPwpzWKlUBWk8R.JPG"
+          alt="Meditation in Peaceful Nature">
+      </div>
+      <!-- Slide 3 -->
+      <div class="hero-slide">
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/img-20190425-wa0023-AMq2QrO1GwSJW9M5.jpg"
+          alt="Meditation in Peaceful Nature">
+      </div>
+      <!-- Slide 4 -->
+      <div class="hero-slide">
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/290913754_783764129471183_1227003281655038526_n-mnl5bO1ORVf9jb9X.jpg"
+          alt="Active Healthy Lifestyle Outdoors">
+      </div>
+      <!-- Slide 5 -->
+      <div class="hero-slide">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/img_0875-YrDXwpv7orCO2wVl.JPG"
+          alt="Biological Cellular Concept">
+      </div>
+    </div>
+
+    <!-- 0.001% Stat Hotspots / Interactive Crisis Points -->
+    <div class="hero-hotspots">
+      <div class="hotspot hotspot-1">
+        <div class="hotspot-trigger">%</div>
+        <div class="hotspot-tooltip">
+          <strong>Only 0.001%</strong> of our year (approx. 10 hours) is spent in front of doctor consultations. The
+          remaining 99.99% is self-managed health.
+        </div>
+      </div>
+      <div class="hotspot hotspot-2">
+        <div class="hotspot-trigger">H</div>
+        <div class="hotspot-tooltip">
+          <strong>8,750 Hours</strong> are left to you each year. Your food, sleep, exercise, and stress choices define
+          your survival in this crucial space.
+        </div>
+      </div>
+      <div class="hotspot hotspot-3">
+        <div class="hotspot-trigger">C</div>
+        <div class="hotspot-tooltip">
+          <strong>Cellular Stewardship:</strong> Cellular repair and circadian rhythm management happen entirely within
+          your daily lifestyle ecosystem.
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-headline-wrapper">
+        <img
+          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=300,h=300,fit=crop/dWxnO74qGGcN789B/art-of-self-healthcare-3-AzGXybJkEnsGDL16.png"
+          alt="Art Of Self-Healthcare Logo" class="hero-brand-logo">
+        <h1 class="hero-headline">Building Healthier Humans,<br>Not Just More Hospitals</h1>
+        <p class="hero-subheadline">Your health, your responsibility. Learn. Grow. Thrive.</p>
+        <div class="hero-cta">
+          <a href="#crisis" class="btn-primary">Explore the Movement</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arrow navigation -->
+    <button class="hero-arrow hero-arrow-left" id="hero-prev" aria-label="Previous Slide">&#10094;</button>
+    <button class="hero-arrow hero-arrow-right" id="hero-next" aria-label="Next Slide">&#10095;</button>
+
+    <!-- Dots navigation indicators -->
+    <div class="hero-controls" id="hero-controls">
+      <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
+      <button class="hero-dot" data-slide="4" aria-label="Slide 5"></button>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 3: Healthcare Crisis Stats
+       ========================================== -->
+  <section class="stats-section" id="crisis">
+    <div class="container">
+      <div class="stats-grid">
+        <!-- Left Side: Crisis Description & Bullets -->
+        <div class="stats-info">
+          <h2>The Healthcare Crisis</h2>
+          <ul class="crisis-bullets">
+            <li class="crisis-bullet">
+              <span class="bullet-number">1</span>
+              <p class="bullet-text">
+                <strong>A perfect storm of an aging population</strong> that places an unprecedented, unsustainable
+                strain on clinical facilities.
+              </p>
+            </li>
+            <li class="crisis-bullet">
+              <span class="bullet-number">2</span>
+              <p class="bullet-text">
+                <strong>Increased cardiovascular risk factors</strong> which have escalated modern lifestyle mortality
+                to critical levels.
+              </p>
+            </li>
+            <li class="crisis-bullet">
+              <span class="bullet-number">3</span>
+              <p class="bullet-text">
+                <strong>Increased prevalence of multiple chronic conditions</strong> requiring lifelong, daily
+                management outside traditional doctor care.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Side: Big 0.001% Stat Card -->
+        <div class="stats-visual">
+          <div class="stat-number" id="animated-stat">0%</div>
+          <h3 class="stat-label">Time Spent with Health Professionals</h3>
+          <p class="stat-desc">
+            The staggering disparity of patient self-reliance in modern life.
+          </p>
+
+          <div class="stat-gauge-container">
+            <div class="gauge-label-row">
+              <span>Doctor Contact: 10 Hours</span>
+              <span>Total Year: 8,760 Hours</span>
+            </div>
+            <div class="gauge-bar-bg">
+              <div class="gauge-bar-fill" id="gauge-fill"></div>
+            </div>
+          </div>
+
+          <div class="stat-source">[ W.H.O. Data ]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section: Our Vision Song (NPP Anthem)
+       ========================================== -->
+  <section class="video-section" id="vision-song">
+    <div class="container">
+      <h2 class="section-title">Our Vision Song</h2>
+      <p class="section-subtitle">No Prescription Point Anthem — स्वयं सेवा सर्वोच्च सेवा</p>
+
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/MDGDPMRNYlM?autoplay=0&controls=1&rel=0" title="GSHER Vision Song"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 4: Importance of Self-Healthcare
+       ========================================== -->
+  <section class="diagram-section" id="importance">
+    <div class="container">
+      <h2 class="section-title">Importance of Self-Healthcare</h2>
+      <p class="section-subtitle">Revolutionizing healthcare through self-healthcare education and cellular revival.</p>
+
+      <div class="diagram-layout">
+        <!-- Left: Interactive Venn Diagram -->
+        <div class="diagram-visual">
+          <div class="circle-node circle-physical active-focus" data-target="physical">
+            <h4>Physical</h4>
+            <p>Cellular Nutrition & Sleep</p>
+          </div>
+          <div class="circle-node circle-mental" data-target="mental">
+            <h4>Mental</h4>
+            <p>Stress & Breathwork</p>
+          </div>
+          <div class="circle-node circle-spiritual" data-target="spiritual">
+            <h4>Spiritual</h4>
+            <p>Mindfulness & Stillness</p>
+          </div>
+        </div>
+
+        <!-- Right: Detail Panel -->
+        <div class="diagram-details">
+          <div class="diagram-details-header">
+            <div style="flex-grow: 1;">
+              <!-- Physical Details -->
+              <div class="details-panel details-panel-physical active" id="details-physical">
+                <h3>Physical Stewardship</h3>
+                <ul class="details-list">
+                  <li><strong>Cellular Nutrition:</strong> Understanding your gut microbiome and feeding cells for
+                    energy, not just taste.</li>
+                  <li><strong>Circadian Syncing:</strong> Aligning sleep-wake cycles with daylight to optimize melatonin
+                    and cortisol.</li>
+                  <li><strong>Active Living:</strong> Gentle daily movements that trigger cellular adaptation and blood
+                    flow.</li>
+                </ul>
+              </div>
+
+              <!-- Mental Details -->
+              <div class="details-panel details-panel-mental" id="details-mental">
+                <h3>Mental Resilience</h3>
+                <ul class="details-list">
+                  <li><strong>Circadian Rest:</strong> Mitigating mental burnout by prioritizing regular pauses and
+                    screen detox.</li>
+                  <li><strong>Stress Formula:</strong> Utilizing breathwork protocols to switch the nervous system from
+                    fight-or-flight to rest-and-digest.</li>
+                  <li><strong>Habit Reprogramming:</strong> Transforming negative routines into health-promoting neural
+                    pathways.</li>
+                </ul>
+              </div>
+
+              <!-- Spiritual Details -->
+              <div class="details-panel details-panel-spiritual" id="details-spiritual">
+                <h3>Spiritual Alignment</h3>
+                <ul class="details-list">
+                  <li><strong>Biological Awareness:</strong> Tuning into your body's subtle signals before they escalate
+                    into symptoms.</li>
+                  <li><strong>Intense Stillness:</strong> Practicing daily meditation to quiet the mind and reduce
+                    cellular stress.</li>
+                  <li><strong>Purposeful Life:</strong> Connecting with your innate biological intelligence and a sense
+                    of shared community.</li>
+                </ul>
+              </div>
+            </div>
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=300,h=300,fit=crop/dWxnO74qGGcN789B/art-of-self-healthcare-3-AzGXybJkEnsGDL16.png"
+              alt="Art Of Self-Healthcare Logo" class="diagram-brand-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 5: Founder YouTube Video
+       ========================================== -->
+  <section class="video-section" id="founder-video">
+    <div class="container">
+      <h2 class="section-title">Listen Directly from the Founder</h2>
+      <p class="section-subtitle">Hear Dr. Biswajit Mohapatra explain the philosophy of self-healthcare and cellular
+        healing.</p>
+
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/1f3X9Ue0Y8k?autoplay=0&controls=1&rel=0"
+            title="Dr. Mohapatra Self-Healthcare Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 6A: Founder & Vision Section
+       ========================================== -->
+  <section class="founder-vision-section" id="vision">
+    <div class="container">
+      <div class="founder-grid">
+        <!-- Left: Founder Image -->
+        <div class="founder-image-container">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/ima-1jpg-dOqMZQMoOPt46yeV.JPG"
+            alt="Dr. Biswajit Mohapatra, Founder of GSHER" class="founder-image">
+        </div>
+
+        <!-- Right: Vision & Quote -->
+        <div class="founder-text-content">
+          <span class="vision-tag">GSHER Leadership</span>
+          <h2 class="vision-title-main">A Vision to Promote<br>Self-Healthcare <span
+              class="accent-green">Globally</span></h2>
+          <p class="vision-desc-main">
+            Global Self-Healthcare Education and Research is a non-profit organization committed to empowering
+            individuals to take control of their own health and well-being through innovative research, cutting-edge
+            educational programs, and community outreach initiatives.
+          </p>
+
+          <blockquote class="founder-quote-block">
+            <p class="quote-text">
+              "Just like other players in the healthcare field, we do not enjoy earning money from your illness, but
+              from the effort we put in to preserve and protect your body for the rest of your life."
+            </p>
+            <cite class="quote-author">— Dr. Biswajit Mohapatra, Founder & Chairman</cite>
+          </blockquote>
+          <div style="margin-top: 25px;">
+            <a href="/about" class="btn-primary">Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 6B: Leadership Interview CTA Section
+       ========================================== -->
+  <section class="interview-cta-section" id="interview-cta">
+    <div class="container">
+      <div class="interview-header-row">
+        <span class="interview-cta-tag">In-Depth Discussion</span>
+        <h2 class="interview-cta-title">A Vision to Educate</h2>
+        <p class="interview-cta-desc">
+          To solve the global crisis, we must shift from a reactive hospital dependency model to a proactive self-healthcare learning environment.
+        </p>
+      </div>
+
+      <div class="conversation-layout">
+        <!-- Speaker 1 (Left): President -->
+        <div class="conversation-speaker speaker-left">
+          <div class="speaker-avatar-container">
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=401,fit=crop/dWxnO74qGGcN789B/whatsapp-image-2023-04-22-at-22.43.45_prev_ui-Yg21LZ00rxs9gwrR.png" alt="Dr. Subhasish Das" class="speaker-avatar">
+          </div>
+          <div class="speaker-info-card">
+            <span class="speaker-name">Dr. Subhasish Das</span>
+            <span class="speaker-role">President, GSHER</span>
+          </div>
+        </div>
+
+        <!-- Conversation Snippet (Center) -->
+        <div class="conversation-bubble-container">
+          <!-- Bubble 1 -->
+          <div class="bubble bubble-left">
+            <div class="bubble-content">
+              <p class="bubble-text">Dr. Mohapatra, why is self-healthcare so critical today?</p>
+            </div>
+          </div>
+          <!-- Bubble 2 -->
+          <div class="bubble bubble-right">
+            <div class="bubble-content">
+              <p class="bubble-text">The average person spends only 10 hours a year in front of doctors. The remaining 99.99% is self-managed health. We need to empower individuals rather than waiting for them to get sick.</p>
+            </div>
+          </div>
+          <!-- Bubble 3 -->
+          <div class="bubble bubble-left">
+            <div class="bubble-content">
+              <p class="bubble-text">GSHER focuses heavily on the proactive model. How does the CelluReva protocol fit into this shift?</p>
+            </div>
+          </div>
+          <!-- Bubble 4 -->
+          <div class="bubble bubble-right">
+            <div class="bubble-content">
+              <p class="bubble-text">Most hospitals manage illness in crisis. CelluReva helps people preserve and protect their health from the cellular level through circadian synchronization, nutrition, and stress management.</p>
+            </div>
+          </div>
+          <!-- CTA Trigger inside the chat -->
+          <div class="chat-cta-wrapper">
+            <button class="btn-accent" id="open-interview">Read Full Interview</button>
+          </div>
+        </div>
+
+        <!-- Speaker 2 (Right): Chairman -->
+        <div class="conversation-speaker speaker-right">
+          <div class="speaker-avatar-container">
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=407,fit=crop/dWxnO74qGGcN789B/20231006_132123_prev_ui-mjEQy15oxOFr0O5Q.png" alt="Dr. Biswajit Mohapatra" class="speaker-avatar chairman-avatar">
+          </div>
+          <div class="speaker-info-card">
+            <span class="speaker-name">Dr. Biswajit Mohapatra</span>
+            <span class="speaker-role">Chairman, GSHER</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 6 Sub: Dialogue Interview Modal
+       ========================================== -->
+  <div class="interview-modal" id="interview-modal" role="dialog" aria-labelledby="modal-title-text" aria-hidden="true">
+    <div class="modal-container">
+      <div class="modal-header">
+        <span class="modal-title" id="modal-title-text">GSHER Leadership Interview</span>
+        <button class="modal-close" id="close-interview" aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+
+        <div class="dialogue-turn dialogue-turn-interviewer">
+          <span class="speaker speaker-interviewer">Dr. Subhasis Das (President, GSHER):</span>
+          <p class="dialogue-text">
+            Dr. Mohapatra, thank you for joining us today. Let's start with the basics: why self-healthcare?
+          </p>
+        </div>
+
+        <div class="dialogue-turn dialogue-turn-founder">
+          <span class="speaker speaker-founder">Dr. Biswajit Mohapatra (Founder):</span>
+          <p class="dialogue-text">
+            Thank you, Subhasis. Self-healthcare is not a luxury; it is a critical necessity. The average person spends
+            only about 10 hours a year in front of a doctor, representing 0.001% of the year. The remaining 99.99% is
+            spent managing health on their own. We need to empower individuals to make these choices with biological
+            intelligence rather than waiting to get sick.
+          </p>
+        </div>
+
+        <div class="dialogue-turn dialogue-turn-interviewer">
+          <span class="speaker speaker-interviewer">Dr. Subhasis Das:</span>
+          <p class="dialogue-text">
+            I understand that GSHER is working on a shift from a reactive to a proactive health model. Can you elaborate
+            on that?
+          </p>
+        </div>
+
+        <div class="dialogue-turn dialogue-turn-founder">
+          <span class="speaker speaker-founder">Dr. Biswajit Mohapatra:</span>
+          <p class="dialogue-text">
+            Absolutely. Most medical institutions are built to rescue patients in crisis. That is essential work, but it
+            does not create health—it manages illness. We want to teach people how to protect and preserve their health
+            from the cellular level using the CelluReva protocol. Treatment is when needed, but education is for a
+            lifetime.
+          </p>
+        </div>
+
+        <div class="dialogue-turn dialogue-turn-interviewer">
+          <span class="speaker speaker-interviewer">Dr. Subhasis Das:</span>
+          <p class="dialogue-text">
+            You have a unique perspective on the financial philosophy of healthcare. Could you tell us more about that?
+          </p>
+        </div>
+
+        <div class="dialogue-turn dialogue-turn-founder">
+          <span class="speaker speaker-founder">Dr. Biswajit Mohapatra:</span>
+          <p class="dialogue-text">
+            Yes. Just like other players in the healthcare field, we do not enjoy earning money from your illness, but
+            from the effort we put in to preserve and protect your body for the rest of your life. This is why we
+            operate No Prescription Point—not to prescribe drugs, but to offer wellness counseling and self-care
+            education.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       Section 7: Hustle to Healing Book
+       ========================================== -->
+  <section class="book-section" id="books">
+    <div class="container">
+      <div class="book-grid">
+        <!-- Left: Details -->
+        <div class="book-details">
+          <span class="book-tag">Featured Publication</span>
+          <h2 class="book-title">Hustle to Healing</h2>
+          <p class="book-desc">
+            In a high-pressure world where burnout is the new badge of honor, <strong>Hustle to Healing: Live Well to
+              Lead Well</strong> offers a radical reframe: true leadership begins with personal well-being.
+          </p>
+          <p class="book-desc">
+            Guided by consultant surgeon <strong>Dr. Biswajit Mohapatra's</strong> immersive storytelling and
+            science-backed wisdom, this book takes you inside corporate corridors and cellular healing sanctuaries to
+            explore how biological rhythm, sleep, food quality, and conscious movement define your survival and
+            leadership potential.
+          </p>
+          <ul class="book-features">
+            <li>Discover the "CelluReva" framework: Reset, Revive, Reprogram, Restore.</li>
+            <li>Understand how stress and ambition translate to biological exhaustion at the cellular level.</li>
+            <li>Implement actionable protocols to restore circadian balance and double your daily energy.</li>
+          </ul>
+          <div style="margin-top: 10px;">
+            <a href="https://pages.razorpay.com/h2hbook" target="_blank" rel="noopener noreferrer"
+              class="btn-primary">Buy from Amazon</a>
+          </div>
+        </div>
+
+        <!-- Right: Book Cover -->
+        <div class="book-cover-container">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=450,fit=crop/dWxnO74qGGcN789B/brn00005-fkHy051JoVjOMZGZ.JPG"
+            alt="Hustle to Healing Book Cover" class="book-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 8: Care for Your Health Book
+       ========================================== -->
+  <section class="book-section" id="care-book">
+    <div class="container">
+      <div class="book-grid reverse">
+        <!-- Left: Book Cover -->
+        <div class="book-cover-container">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=450,fit=crop/dWxnO74qGGcN789B/care-for-your-health_3d-cover_prev_ui-YKbPDqwJ16U09lBy.png"
+            alt="Care for Your Health Book Cover" class="book-cover">
+        </div>
+
+        <!-- Right: Details -->
+        <div class="book-details">
+          <span class="book-tag">Health User Manual</span>
+          <h2 class="book-title">Care for Your Health</h2>
+          <p class="book-desc">
+            <strong>Care for Your Health: A User Manual for Living Healthy</strong> is a comprehensive guide focusing on
+            preventive healthcare, health protection, and cellular well-being.
+          </p>
+          <p class="book-desc">
+            Learn how basic, daily elements—breathing techniques, conscious nutrition, cellular hydration, sleep
+            hygiene, and meditative pause—interact with your biological systems to prevent chronic conditions such as
+            diabetes, cancer, and hypertension.
+          </p>
+          <ul class="book-features">
+            <li>Introduces the <strong>S.T.R.E.S.S. Formula</strong> for effective nervous system regulation.</li>
+            <li>Offers a practical diet chart that shifts the paradigm: "The best diet chart is no diet chart at all."
+            </li>
+            <li>Empowers families with direct biological self-care guidelines.</li>
+          </ul>
+          <div style="margin-top: 10px;">
+            <a href="https://www.amazon.in/Care-Your-Health-Manual-Healthy/dp/1645465039/" target="_blank"
+              rel="noopener noreferrer" class="btn-primary">Buy from Amazon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 9: Perfect Health Secrets Series
+       ========================================== -->
+  <section class="series-section" id="videos">
+    <div class="container">
+      <h2 class="section-title">Perfect Health Secrets Series</h2>
+      <p class="section-subtitle">Watch the core modules of our health education curriculum. Discover the hidden science
+        of healing.</p>
+
+      <div class="videos-grid">
+        <!-- Video 1 -->
+        <div class="video-card">
+          <div class="video-thumbnail-container" data-video-id="yu07KxRINi0">
+            <img src="https://i.ytimg.com/vi/yu07KxRINi0/hqdefault.jpg" alt="Introduction to Perfect Health Secrets"
+              class="video-thumbnail">
+            <div class="play-button-overlay"><span></span></div>
+          </div>
+          <div class="video-info">
+            <span class="video-card-tag">Module 1</span>
+            <h3 class="video-card-title">Introduction to Perfect Health Secrets</h3>
+            <p class="video-card-desc">Why should we learn about health? A masterclass detailing the difference between
+              medical education and health education.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card">
+          <div class="video-thumbnail-container" data-video-id="3uC53GUumjQ">
+            <img src="https://i.ytimg.com/vi/3uC53GUumjQ/hqdefault.jpg" alt="We are a Body of Minds"
+              class="video-thumbnail">
+            <div class="play-button-overlay"><span></span></div>
+          </div>
+          <div class="video-info">
+            <span class="video-card-tag">Module 2</span>
+            <h3 class="video-card-title">We are a Body of Minds</h3>
+            <p class="video-card-desc">The new biology reveals that we have more minds than we thought. Learn how
+              cellular intelligence coordinates systemic health.</p>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-card">
+          <div class="video-thumbnail-container" data-video-id="Nip7EyN3GzA">
+            <img src="https://i.ytimg.com/vi/Nip7EyN3GzA/hqdefault.jpg" alt="Circadian Rhythms & Inner Clocks"
+              class="video-thumbnail">
+            <div class="play-button-overlay"><span></span></div>
+          </div>
+          <div class="video-info">
+            <span class="video-card-tag">Module 3</span>
+            <h3 class="video-card-title">Circadian Rhythms & Inner Clocks</h3>
+            <p class="video-card-desc">How internal master clocks regulate hormones, digestion, sleep cycles, and
+              metabolic health. Why disruption leads to disease.</p>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-card">
+          <div class="video-thumbnail-container" data-video-id="RGjfUhSjiKk">
+            <img src="https://i.ytimg.com/vi/RGjfUhSjiKk/hqdefault.jpg" alt="No Prescription Point (NPP) Philosophy"
+              class="video-thumbnail">
+            <div class="play-button-overlay"><span></span></div>
+          </div>
+          <div class="video-info">
+            <span class="video-card-tag">Module 4</span>
+            <h3 class="video-card-title">No Prescription Point (NPP) Philosophy</h3>
+            <p class="video-card-desc">A deep dive into how self-counseling and proactivity bypass standard drug
+              dependency. Healing from the inside out.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="series-action">
+        <a href="https://www.youtube.com/@drbiswajitspeaks" target="_blank" rel="noopener noreferrer"
+          class="btn-primary">View All Episodes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 10: No Prescription Point Banner
+       ========================================== -->
+  <section class="split-banner-section dark" id="npp">
+    <div class="container">
+      <div class="split-banner-grid">
+        <!-- Left: Text -->
+        <div class="banner-content">
+          <span class="banner-tag">Health Center Initiative</span>
+          <h2 class="banner-title">No Prescription Point (NPP)</h2>
+          <p class="banner-desc">
+            No Prescription Point is a landmark initiative of the <strong>Global Self-Healthcare Education and Research
+              (GSHER) Trust</strong>. It represents a paradigm shift in our daily health culture.
+          </p>
+          <p class="banner-desc">
+            We provide comprehensive self-healthcare counseling, educational modules, and support systems to empower
+            individuals to make informed decisions for a healthier, prescription-free life.
+          </p>
+          <div>
+            <a href="#contact" class="btn-primary"
+              style="background-color: var(--color-accent); color: var(--color-primary-dark);">Request Counseling</a>
+          </div>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="banner-image-container">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,fit=crop/dWxnO74qGGcN789B/img_20240730_072040431-YNqryZvgOQSl765z.jpg"
+            alt="No Prescription Point Center" class="banner-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 11: IMWRC Section
+       ========================================== -->
+  <section class="split-banner-section" id="imwrc">
+    <div class="container">
+      <div class="split-banner-grid reverse">
+        <!-- Left: Image -->
+        <div class="banner-image-container">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,fit=crop/dWxnO74qGGcN789B/imwrai-YBgEZxyJ10sBvbLz.jpg"
+            alt="Institute of Health and Medical Wellness Research Centre" class="banner-image">
+        </div>
+
+        <!-- Right: Text -->
+        <div class="banner-content">
+          <span class="banner-tag">Research & Education</span>
+          <h2 class="banner-title">Institute of Health and Medical Wellness Research Centre</h2>
+          <p class="banner-desc">
+            <strong>GSHER</strong> is building the first of its kind <strong>Institute of Health and Medical Wellness
+              Research Centre (IMWRC)</strong>.
+          </p>
+          <p class="banner-desc">
+            Our goal is to power the wellness culture of India by training a new cadre of healthcare professionals:
+            <strong>Self-Healthcare Educators</strong>. These educators will focus on health protection, biological
+            intelligence, and patient self-care counseling.
+          </p>
+          <div>
+            <a href="#contact" class="btn-outline">Support the Research</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 12: Self-Healthcare Education (WHO)
+       ========================================== -->
+  <section class="who-section" id="who-framework">
+    <div class="container">
+      <div class="who-card">
+        <div class="who-header">
+          <span class="who-badge">Global Standard</span>
+          <h3 class="who-title">World Health Organization (WHO)</h3>
+        </div>
+        <p class="who-quote">
+          "Self-care is the ability of individuals, families, and communities to promote health, prevent disease,
+          maintain health, and cope with illness and disability with or without the support of a healthcare provider."
+        </p>
+        <p class="who-analysis">
+          GSHER's curriculum is structurally aligned with the WHO self-care guidelines. By educating people about
+          circadian rhythms, biology, and nutrition, we bridge the gap between needing health and wanting
+          health—empowering you to take charge of the 8,750 hours of the year spent outside the doctor's clinic.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 13: Photo Grid
+       ========================================== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <h2 class="section-title">Activities & Movement</h2>
+      <p class="section-subtitle">Glimpses of community training, student workshops, and self-healthcare programs led by
+        GSHER.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/img_0969-AR0VxWe507sn3rRx.JPG"
+            alt="GSHER Training Event">
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/img-20190425-wa0023-AMq2QrO1GwSJW9M5.jpg"
+            alt="Doctor Speaks Seminar">
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/111-Yan7xaeMovTj3Lxn.png"
+            alt="Self-Healthcare Workshop">
+        </div>
+        <div class="gallery-item">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/ima-1jpg-dOqMZQMoOPt46yeV.JPG"
+            alt="Patient Wellness Camp">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 14: Blog Section
+       ========================================== -->
+  <section class="blog-section" id="blog">
+    <div class="container">
+      <h2 class="section-title">Latest from Our Blog</h2>
+      <p class="section-subtitle">Stay informed with medical essays, patient stories, and wellness guidelines written by
+        Dr. Biswajit Mohapatra.</p>
+
+      <div class="blog-grid">
+        <!-- Post 1 -->
+        <article class="blog-card">
+          <a href="https://www.globalselfhealthcare.org/surgeons-dilemma" target="_blank" class="blog-card-img-link">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=250,fit=crop/dWxnO74qGGcN789B/tribal-painting-india-21896771-YD0BGEVp43hQM8vn.webp"
+              alt="A Surgeon’s Dilemma" class="blog-card-img">
+          </a>
+          <div class="blog-card-content">
+            <span class="blog-card-meta">Narrative Journey • Feb 2, 2025</span>
+            <h3 class="blog-card-title">A Surgeon’s Dilemma: Faith vs. Protocol</h3>
+            <p class="blog-card-desc">Punni Majhi's Journey—Part 2/5: A surgeon's profound revelation from the core of
+              his heart on patients' circadian rhythms and inner biology.</p>
+            <a href="https://www.globalselfhealthcare.org/surgeons-dilemma" target="_blank" class="blog-card-link">Read
+              Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="blog-card">
+          <a href="https://www.globalselfhealthcare.org/the-uniqueness-of-the-cellureva-protocol-part-i" target="_blank"
+            class="blog-card-img-link">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=250,fit=crop/dWxnO74qGGcN789B/1-AGBzrnwV8asEOeP8.png"
+              alt="CelluReva Protocol" class="blog-card-img">
+          </a>
+          <div class="blog-card-content">
+            <span class="blog-card-meta">Protocol Guide • Sep 28, 2025</span>
+            <h3 class="blog-card-title">The Uniqueness of the "CelluReva" Protocol: Part I</h3>
+            <p class="blog-card-desc">CelluReva integrates yoga, biology, sleep, and mindset into an aligned cellular
+              healing ecosystem for chronic disease reversal.</p>
+            <a href="https://www.globalselfhealthcare.org/the-uniqueness-of-the-cellureva-protocol-part-i"
+              target="_blank" class="blog-card-link">Read Article &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="blog-card">
+          <a href="https://www.globalselfhealthcare.org/from-self-care-to-cell-care-part-2" target="_blank"
+            class="blog-card-img-link">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=250,fit=crop/dWxnO74qGGcN789B/1757438211927-Awv8XjqZ5Bh7G8bp.png"
+              alt="Self-Care to Cell-Care" class="blog-card-img">
+          </a>
+          <div class="blog-card-content">
+            <span class="blog-card-meta">Cellular Health • Sep 11, 2025</span>
+            <h3 class="blog-card-title">From Self-Care to Cell-Care: Part II</h3>
+            <p class="blog-card-desc">Every breath, meal, and thought is a cellular signal. Discover why your long-term
+              health depends on shifting from self-care to cell-care.</p>
+            <a href="https://www.globalselfhealthcare.org/from-self-care-to-cell-care-part-2" target="_blank"
+              class="blog-card-link">Read Article &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 15: Join the Movement CTA
+       ========================================== -->
+  <section class="cta-section" id="membership">
+    <div class="container">
+      <div class="cta-container">
+        <h2 class="cta-title">Join the Self-Healthcare Movement</h2>
+        <p class="cta-desc">
+          Become a member of the Global Self-Healthcare Education and Research movement. Access our training modules,
+          join workshops, and help us establish the first Wellness Research Centre in India.
+        </p>
+        <a href="#contact" class="btn-primary"
+          style="background-color: var(--color-accent); color: var(--color-primary-dark);">Become a Member</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Section 16: Footer & Contact Section
+       ========================================== -->
+</Layout>
