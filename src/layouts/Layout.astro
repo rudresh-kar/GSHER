@@ -1,5 +1,6 @@
 ---
 import '../styles/index.css';
+import { siteConfig } from '../site.config.js';
 
 interface Props {
   title?: string;
@@ -8,14 +9,13 @@ interface Props {
 }
 
 const {
-  title = "Global Self-Healthcare Education and Research (GSHER)",
-  description = "Empowering individuals through Self-Healthcare education, Cellular Revival (CelluReva), and proactive wellness. Shift from doctor-dependent reactive treatment to daily self-care.",
-  keywords = "Global Self Healthcare, Self Healthcare Education, Cellular Health, CelluReva, Dr Biswajit Mohapatra, No Prescription Point"
+  title = `${siteConfig.siteName} ${siteConfig.siteTagline} | Cellular Health Protocol`,
+  description = siteConfig.siteDescription,
+  keywords = siteConfig.siteKeywords,
 } = Astro.props;
 
-const pathname = Astro.url.pathname;
-const currentPath = pathname.replace(/\/$/, "");
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
 ---
 
 <!DOCTYPE html>
@@ -27,45 +27,81 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={siteConfig.siteUrl} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=32,fit=crop/dWxnO74qGGcN789B/queen-logo-design-1-YD0ro0oK5jUnP1oQ.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href={`${base}/favicon.png`} />
+  <link rel="apple-touch-icon" href={`${base}/favicon.png`} />
+
+  <!-- Google Fonts (Inter + Playfair Display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": `${siteConfig.siteName} ${siteConfig.siteTagline}`,
+    "url": siteConfig.siteUrl,
+    "description": siteConfig.siteDescription,
+    "creator": {
+      "@type": "Person",
+      "name": siteConfig.founder.name,
+      "jobTitle": siteConfig.founder.title,
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Global Self-Healthcare Education and Research (GSHER)",
+    }
+  })} />
+
+  <!-- Analytics Placeholder: Add your tracking scripts here -->
+  <!-- Google Analytics: <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-ID"></script> -->
+  <!-- Facebook Pixel: Add pixel code here -->
+  <!-- Hotjar: Add Hotjar code here -->
 </head>
 <body>
 
   <!-- ==========================================
-       Section 1: Navbar
+       NAVBAR
        ========================================== -->
   <header class="navbar" id="navbar">
     <div class="container">
-      <a href={`${base}/#home`} class="logo">
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=90,fit=crop/dWxnO74qGGcN789B/queen-logo-design-1-YD0ro0oK5jUnP1oQ.png"
-          alt="GSHER Logo" class="logo-img" />
-        <div class="logo-text">
-          <span class="logo-title">GSHER India</span>
-          <span class="logo-sub">Global Self-Healthcare</span>
+      <a href={`${base}/`} class="nav-brand">
+        <img src={`${base}/favicon.png`} alt={`${siteConfig.siteName} Logo`} class="nav-brand-icon" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">{siteConfig.siteName}</span>
+          <span class="nav-brand-sub">{siteConfig.siteTagline}</span>
         </div>
       </a>
 
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li class="nav-item"><a href={`${base}/#home`} class={currentPath === base ? 'active' : ''}>Home</a></li>
-          <li class="nav-item"><a href={`${base}/about`} class={currentPath === `${base}/about` ? 'active' : ''}>About Us</a></li>
-          <li class="nav-item"><a href={`${base}/#crisis`}>Why Self-Healthcare</a></li>
-          <li class="nav-item"><a href={`${base}/#books`}>Books</a></li>
-          <li class="nav-item"><a href={`${base}/#videos`}>Videos</a></li>
-          <li class="nav-item"><a href={`${base}/#npp`}>NPP</a></li>
-          <li class="nav-item"><a href={`${base}/#imwrc`}>IMWRC</a></li>
-          <li class="nav-item"><a href={`${base}/#blog`}>Blog</a></li>
-          <li class="nav-item"><a href={`${base}/#contact`} class="btn-outline"
-              style="padding: 6px 16px; font-size: 14px; margin-left: 10px;">Contact</a></li>
-        </ul>
+      <nav class="nav-links" id="nav-links">
+        <a href={`${base}/#home`}>Home</a>
+        <a href={`${base}/#protocol`}>Protocol</a>
+        <a href={`${base}/#how-it-works`}>How It Works</a>
+        <a href={`${base}/#about`}>About</a>
+        <a href={`${base}/#books`}>Books</a>
+        <a href={siteConfig.externalLinks.gsherBlog} target="_blank" rel="noopener noreferrer">Blog</a>
       </nav>
 
-      <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+      <div class="nav-cta">
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Book Consultation
+        </a>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle Menu">
         <span></span>
         <span></span>
         <span></span>
@@ -73,96 +109,107 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </div>
   </header>
 
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-nav-links">
+      <a href={`${base}/#home`}>Home</a>
+      <a href={`${base}/#protocol`}>Protocol</a>
+      <a href={`${base}/#how-it-works`}>How It Works</a>
+      <a href={`${base}/#about`}>About</a>
+      <a href={`${base}/#books`}>Books</a>
+      <a href={siteConfig.externalLinks.gsherBlog} target="_blank" rel="noopener noreferrer">Blog</a>
+    </nav>
+    <div class="mobile-nav-cta">
+      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <i class="fa-brands fa-whatsapp"></i> Book Consultation
+      </a>
+    </div>
+  </div>
+
+  <!-- Page Content -->
   <slot />
 
   <!-- ==========================================
-       Section 16: Footer & Contact Section
+       FOOTER
        ========================================== -->
   <footer class="footer" id="contact">
     <div class="container">
       <div class="footer-grid">
-        <!-- Col 1: Brand details -->
+        <!-- Col 1: Brand -->
         <div class="footer-col">
-          <div class="footer-logo">
-            <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=90,fit=crop/dWxnO74qGGcN789B/queen-logo-design-1-YD0ro0oK5jUnP1oQ.png"
-              alt="GSHER Logo" class="footer-logo-img" />
-            <div class="footer-logo-text">
-              <span class="footer-logo-title">GSHER India</span>
-              <span class="footer-logo-sub">Global Self-Healthcare</span>
+          <div class="footer-brand">
+            <img src={`${base}/favicon.png`} alt={`${siteConfig.siteName} Logo`} class="footer-brand-icon" />
+            <div>
+              <div class="footer-brand-name">{siteConfig.siteName}</div>
+              <div class="footer-brand-sub">{siteConfig.siteTagline}</div>
             </div>
           </div>
           <p class="footer-about-text">
-            Global Self-Healthcare Education and Research (GSHER) is a non-profit organization dedicated to empowering
-            individuals with the biological intelligence and tools needed to protect and preserve their health.
+            {siteConfig.siteDescription}
           </p>
         </div>
 
-        <!-- Col 2: Navigation Links -->
+        <!-- Col 2: Quick Links -->
         <div class="footer-col">
           <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href={`${base}/#home`}>Home</a></li>
-            <li><a href={`${base}/about`}>About Us</a></li>
-            <li><a href={`${base}/#crisis`}>Why Self-Healthcare</a></li>
-            <li><a href={`${base}/#books`}>Books</a></li>
-            <li><a href={`${base}/#videos`}>Videos</a></li>
-            <li><a href={`${base}/#npp`}>NPP Center</a></li>
-            <li><a href={`${base}/#imwrc`}>Research Centre</a></li>
-            <li><a href={`${base}/#blog`}>Blog Posts</a></li>
-          </ul>
+          <nav class="footer-links">
+            <a href={`${base}/#home`}>Home</a>
+            <a href={`${base}/#protocol`}>The Protocol</a>
+            <a href={`${base}/#how-it-works`}>How It Works</a>
+            <a href={`${base}/#about`}>About Dr. Mohapatra</a>
+            <a href={siteConfig.externalLinks.gsherHome} target="_blank" rel="noopener noreferrer">GSHER Foundation</a>
+            <a href={siteConfig.externalLinks.gsherBlog} target="_blank" rel="noopener noreferrer">Blog</a>
+          </nav>
         </div>
 
-        <!-- Col 3: Contact Info -->
+        <!-- Col 3: Contact -->
         <div class="footer-col">
-          <h4>Contact Us</h4>
+          <h4>Contact</h4>
           <div class="footer-contact-item">
             <span class="footer-contact-icon"><i class="fa-solid fa-location-dot"></i></span>
-            <span>Chhend Colony, Rourkela, Odisha, India - 769015</span>
+            <span>{siteConfig.address}</span>
           </div>
           <div class="footer-contact-item">
             <span class="footer-contact-icon"><i class="fa-solid fa-phone"></i></span>
-            <span>+91 9437042490</span>
+            <span>{siteConfig.phone}</span>
           </div>
           <div class="footer-contact-item">
             <span class="footer-contact-icon"><i class="fa-solid fa-envelope"></i></span>
-            <span>info@globalselfhealthcare.org</span>
+            <span>{siteConfig.email}</span>
           </div>
         </div>
 
-        <!-- Col 4: Connect & Socials -->
+        <!-- Col 4: Connect -->
         <div class="footer-col">
-          <h4>Connect With Us</h4>
-          <p>Follow our educational channels and stay updated on workshops.</p>
+          <h4>Connect</h4>
+          <p style="font-size: 14px; margin-bottom: 16px;">Follow us for wellness insights, protocol updates, and community stories.</p>
           <div class="footer-socials">
-            <a href="https://www.facebook.com/globalselfcare/" target="_blank" rel="noopener noreferrer"
-              class="footer-social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.youtube.com/@GlobalSelfHealthcareEducation" target="_blank" rel="noopener noreferrer"
-              class="footer-social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://wa.me/919437042490" target="_blank" rel="noopener noreferrer" class="footer-social-icon"
-              aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="mailto:info@globalselfhealthcare.org" class="footer-social-icon" aria-label="Email"><i
-                class="fa-solid fa-envelope"></i></a>
+            <a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href={siteConfig.socials.youtube} target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href={siteConfig.socials.linkedin} target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href={siteConfig.socials.whatsapp} target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href={`mailto:${siteConfig.email}`} class="footer-social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
       </div>
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p>Copyright &copy; 2026 GSHER Trust India. All rights reserved.</p>
+        <p>Copyright &copy; 2026 {siteConfig.siteName}. All rights reserved.</p>
         <div class="footer-bottom-links">
-          <a href="https://www.globalselfhealthcare.org/privacy-policy-global-self-healthcare" target="_blank">Privacy
-            Policy</a>
-          <a href="https://www.globalselfhealthcare.org/terms-and-conditions-self-healthcare" target="_blank">Terms &
-            Conditions</a>
-          <a href="https://www.globalselfhealthcare.org/refund-policy-zznqgqself-healthcare-movement"
-            target="_blank">Refund Policy</a>
+          <a href={siteConfig.externalLinks.privacyPolicy} target="_blank">Privacy Policy</a>
+          <a href={siteConfig.externalLinks.termsConditions} target="_blank">Terms & Conditions</a>
+          <a href={siteConfig.externalLinks.refundPolicy} target="_blank">Refund Policy</a>
         </div>
+      </div>
+      <div class="footer-gsher-credit" style="text-align: center; padding-bottom: 20px;">
+        A protocol by <a href={siteConfig.externalLinks.gsherHome} target="_blank" rel="noopener noreferrer">Global Self-Healthcare Education & Research (GSHER)</a>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript script inclusion -->
+  <!-- JavaScript -->
   <script>
     import '../scripts/index.js';
   </script>

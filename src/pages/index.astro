@@ -1,245 +1,350 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../site.config.js';
+
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`;
 ---
 
 <Layout>
 
   <!-- ==========================================
-       Section 2: Hero Slideshow
+       HERO SECTION
        ========================================== -->
   <section class="hero" id="home">
-    <div class="hero-slideshow" id="hero-slideshow">
-      <!-- Slide 1 (Active) -->
-      <div class="hero-slide active">
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/ljqarjajotc-mjELR44pxMUPJz7a.jpg"
-          alt="Mindfulness Practice and Yoga">
-      </div>
-      <!-- Slide 2 -->
-      <div class="hero-slide">
-        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/img_0839-AwvPwpzWKlUBWk8R.JPG"
-          alt="Meditation in Peaceful Nature">
-      </div>
-      <!-- Slide 3 -->
-      <div class="hero-slide">
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/img-20190425-wa0023-AMq2QrO1GwSJW9M5.jpg"
-          alt="Meditation in Peaceful Nature">
-      </div>
-      <!-- Slide 4 -->
-      <div class="hero-slide">
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/290913754_783764129471183_1227003281655038526_n-mnl5bO1ORVf9jb9X.jpg"
-          alt="Active Healthy Lifestyle Outdoors">
-      </div>
-      <!-- Slide 5 -->
-      <div class="hero-slide">
-        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto/dWxnO74qGGcN789B/img_0875-YrDXwpv7orCO2wVl.JPG"
-          alt="Biological Cellular Concept">
-      </div>
-    </div>
+    <!-- Background glows -->
+    <div class="hero-bg-glow hero-bg-glow-1"></div>
+    <div class="hero-bg-glow hero-bg-glow-2"></div>
 
-    <!-- 0.001% Stat Hotspots / Interactive Crisis Points -->
-    <div class="hero-hotspots">
-      <div class="hotspot hotspot-1">
-        <div class="hotspot-trigger">%</div>
-        <div class="hotspot-tooltip">
-          <strong>Only 0.001%</strong> of our year (approx. 10 hours) is spent in front of doctor consultations. The
-          remaining 99.99% is self-managed health.
-        </div>
-      </div>
-      <div class="hotspot hotspot-2">
-        <div class="hotspot-trigger">H</div>
-        <div class="hotspot-tooltip">
-          <strong>8,750 Hours</strong> are left to you each year. Your food, sleep, exercise, and stress choices define
-          your survival in this crucial space.
-        </div>
-      </div>
-      <div class="hotspot hotspot-3">
-        <div class="hotspot-trigger">C</div>
-        <div class="hotspot-tooltip">
-          <strong>Cellular Stewardship:</strong> Cellular repair and circadian rhythm management happen entirely within
-          your daily lifestyle ecosystem.
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-content">
-      <div class="hero-headline-wrapper">
-        <img
-          src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=300,h=300,fit=crop/dWxnO74qGGcN789B/art-of-self-healthcare-3-AzGXybJkEnsGDL16.png"
-          alt="Art Of Self-Healthcare Logo" class="hero-brand-logo">
-        <h1 class="hero-headline">Building Healthier Humans,<br>Not Just More Hospitals</h1>
-        <p class="hero-subheadline">Your health, your responsibility. Learn. Grow. Thrive.</p>
-        <div class="hero-cta">
-          <a href="#crisis" class="btn-primary">Explore the Movement</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Arrow navigation -->
-    <button class="hero-arrow hero-arrow-left" id="hero-prev" aria-label="Previous Slide">&#10094;</button>
-    <button class="hero-arrow hero-arrow-right" id="hero-next" aria-label="Next Slide">&#10095;</button>
-
-    <!-- Dots navigation indicators -->
-    <div class="hero-controls" id="hero-controls">
-      <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-      <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-      <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
-      <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
-      <button class="hero-dot" data-slide="4" aria-label="Slide 5"></button>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Section 3: Healthcare Crisis Stats
-       ========================================== -->
-  <section class="stats-section" id="crisis">
     <div class="container">
-      <div class="stats-grid">
-        <!-- Left Side: Crisis Description & Bullets -->
-        <div class="stats-info">
-          <h2>The Healthcare Crisis</h2>
-          <ul class="crisis-bullets">
-            <li class="crisis-bullet">
-              <span class="bullet-number">1</span>
-              <p class="bullet-text">
-                <strong>A perfect storm of an aging population</strong> that places an unprecedented, unsustainable
-                strain on clinical facilities.
-              </p>
-            </li>
-            <li class="crisis-bullet">
-              <span class="bullet-number">2</span>
-              <p class="bullet-text">
-                <strong>Increased cardiovascular risk factors</strong> which have escalated modern lifestyle mortality
-                to critical levels.
-              </p>
-            </li>
-            <li class="crisis-bullet">
-              <span class="bullet-number">3</span>
-              <p class="bullet-text">
-                <strong>Increased prevalence of multiple chronic conditions</strong> requiring lifelong, daily
-                management outside traditional doctor care.
-              </p>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Right Side: Big 0.001% Stat Card -->
-        <div class="stats-visual">
-          <div class="stat-number" id="animated-stat">0%</div>
-          <h3 class="stat-label">Time Spent with Health Professionals</h3>
-          <p class="stat-desc">
-            The staggering disparity of patient self-reliance in modern life.
+      <div class="hero-grid">
+        <!-- Left: Content -->
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-dna"></i>
+            Cellular Health Protocol
+          </div>
+          <h1 class="hero-headline">
+            Revive Your Health<br/>at the <span class="gold">Cellular Level</span>
+          </h1>
+          <p class="hero-subheadline">
+            {siteConfig.siteName} is a science-backed protocol by {siteConfig.founder.name} that integrates yoga, nutrition, sleep, and mindfulness to heal and protect your body — from the inside out.
           </p>
-
-          <div class="stat-gauge-container">
-            <div class="gauge-label-row">
-              <span>Doctor Contact: 10 Hours</span>
-              <span>Total Year: 8,760 Hours</span>
-            </div>
-            <div class="gauge-bar-bg">
-              <div class="gauge-bar-fill" id="gauge-fill"></div>
-            </div>
+          <div class="hero-cta-group">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <i class="fa-brands fa-whatsapp"></i> Book Consultation
+            </a>
+            <a href="#protocol" class="btn-outline-light">
+              Explore the Protocol <i class="fa-solid fa-arrow-down"></i>
+            </a>
           </div>
+        </div>
 
-          <div class="stat-source">[ W.H.O. Data ]</div>
+        <!-- Right: Animated Cell SVG -->
+        <div class="hero-visual">
+          <div class="hero-svg-container">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="biological-cell-svg">
+              <defs>
+                <!-- Glow Filters -->
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="8" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+                <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+                
+                <!-- Living Membrane Morphing Filter -->
+                <filter id="membrane-morph" x="-10%" y="-10%" width="120%" height="120%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise">
+                    <animate attributeName="baseFrequency" values="0.015;0.02;0.015" dur="15s" repeatCount="indefinite" />
+                  </feTurbulence>
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+
+                <!-- Internal Organelle Morphing Filter -->
+                <filter id="organelle-morph" x="-20%" y="-20%" width="140%" height="140%">
+                  <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise">
+                    <animate attributeName="baseFrequency" values="0.02;0.025;0.02" dur="8s" repeatCount="indefinite" />
+                  </feTurbulence>
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+
+                <!-- Gradients -->
+                <!-- Cytoplasm (Cell Body Fluid) -->
+                <radialGradient id="cytoplasmGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#14533a" stop-opacity="0.35" />
+                  <stop offset="70%" stop-color="#0c2a1b" stop-opacity="0.2" />
+                  <stop offset="100%" stop-color="#0c2a1b" stop-opacity="0.0" />
+                </radialGradient>
+
+                <!-- Nucleus Gradient -->
+                <radialGradient id="nucleusGrad" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#f5e6c8" />
+                  <stop offset="40%" stop-color="#c9a96e" />
+                  <stop offset="85%" stop-color="#14533a" />
+                  <stop offset="100%" stop-color="#0c2a1b" />
+                </radialGradient>
+
+                <!-- Nucleolus Gradient (Very center) -->
+                <radialGradient id="nucleolusGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffffff" />
+                  <stop offset="60%" stop-color="#f5e6c8" />
+                  <stop offset="100%" stop-color="#c9a96e" />
+                </radialGradient>
+
+                <!-- Organelle Gold Gradient -->
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f5e6c8" />
+                  <stop offset="100%" stop-color="#c9a96e" />
+                </linearGradient>
+
+                <!-- Organelle Green Gradient -->
+                <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1d7a4e" />
+                  <stop offset="100%" stop-color="#14533a" />
+                </linearGradient>
+              </defs>
+
+              <!-- Outer Molecular Orbit Rings (Floating Energy Field) -->
+              <g class="orbit-group" style="animation: rotate 35s linear infinite;">
+                <circle class="orbit-ring" cx="250" cy="250" r="242" stroke-dasharray="8 12" />
+                <circle class="orbit-dot glow-dot" cx="492" cy="250" r="5" fill="#c9a96e" filter="url(#soft-glow)" />
+              </g>
+              <g class="orbit-group" style="animation: rotate 45s linear infinite reverse;">
+                <circle class="orbit-ring" cx="250" cy="250" r="222" stroke-dasharray="3 6" />
+                <circle class="orbit-dot glow-dot" cx="250" cy="28" r="4" fill="#1d7a4e" filter="url(#soft-glow)" />
+                <circle class="orbit-dot glow-dot" cx="250" cy="472" r="3" fill="#c9a96e" filter="url(#soft-glow)" />
+              </g>
+
+              <!-- Cell Body Scaling Group (1.45x size increase to fill space) -->
+              <g transform="scale(1.45)" transform-origin="250 250">
+                <!-- Cytoskeleton / Microfilaments (Structural Fine Netting) -->
+                <g opacity="0.12" stroke="#c9a96e" stroke-width="0.5" fill="none">
+                  <path d="M 250,250 L 120,180 M 250,250 L 380,180 M 250,250 L 150,330 M 250,250 L 350,330 M 250,250 L 250,90 M 250,250 L 250,410" />
+                  <!-- Web arcs -->
+                  <path d="M 170,208 A 95 95 0 0 1 330,208 A 95 95 0 0 1 310,302 A 95 95 0 0 1 190,302 Z" />
+                  <path d="M 130,190 A 145 145 0 0 1 370,190 A 145 145 0 0 1 340,318 A 145 145 0 0 1 160,318 Z" />
+                </g>
+
+                <!-- Microtubule Transport Paths (Adds scientific details to cytoplasm) -->
+                <g stroke="#1d7a4e" stroke-width="0.8" opacity="0.25" fill="none">
+                  <path d="M 230,220 Q 200,170 170,180" />
+                  <path d="M 270,220 Q 305,180 330,200" />
+                  <path d="M 220,270 Q 185,300 175,325" stroke="#c9a96e" stroke-width="0.6" />
+                  <path d="M 280,270 Q 310,310 330,290" />
+                </g>
+
+                <!-- Cell Cytoplasm (Fluid Body) with Morphing -->
+                <circle cx="250" cy="250" r="140" fill="url(#cytoplasmGrad)" filter="url(#membrane-morph)" />
+
+                <!-- Outer Membrane (Lipid Bilayer - Double Ring) -->
+                <circle class="cell-membrane-outer" cx="250" cy="250" r="142" fill="none" stroke="#c9a96e" stroke-width="1.5" opacity="0.35" filter="url(#membrane-morph)" />
+                <circle class="cell-membrane-inner" cx="250" cy="250" r="137" fill="none" stroke="#1d7a4e" stroke-width="2.5" opacity="0.6" filter="url(#membrane-morph)" />
+                <circle class="cell-membrane-glowing" cx="250" cy="250" r="139" fill="none" stroke="#c9a96e" stroke-width="1" opacity="0.8" filter="url(#membrane-morph) url(#soft-glow)" />
+
+                <!-- Floating Organelles inside Cytoplasm -->
+                
+                <!-- 1. Mitochondria (Gold/Green, pulsing) - Quadrant 1 (Top Left) -->
+                <g transform="translate(140, 160) rotate(25)">
+                  <g style="animation: float 6s ease-in-out infinite;">
+                    <rect x="-22" y="-12" width="44" height="24" rx="12" fill="url(#greenGrad)" stroke="#c9a96e" stroke-width="1.2" filter="url(#organelle-morph)" />
+                    <!-- Inner folds (Cristae) -->
+                    <path d="M -15,-6 L -10,6 L -5,-6 L 0,6 L 5,-6 L 10,6 L 15,-6" fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+
+                <!-- Mitochondria - Quadrant 2 (Bottom Right) -->
+                <g transform="translate(340, 310) rotate(-40)">
+                  <g style="animation: float 7s ease-in-out infinite -2s;">
+                    <rect x="-24" y="-14" width="48" height="28" rx="14" fill="url(#greenGrad)" stroke="#c9a96e" stroke-width="1.2" filter="url(#organelle-morph)" />
+                    <path d="M -17,-8 L -11,8 L -5,-8 L 1,8 L 7,-8 L 13,8 L 17,-8" fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+
+                <!-- Mitochondria - Quadrant 3 (Top Right) -->
+                <g transform="translate(320, 240) rotate(60)">
+                  <g style="animation: float 5.5s ease-in-out infinite -1s;">
+                    <rect x="-20" y="-10" width="40" height="20" rx="10" fill="url(#greenGrad)" stroke="#c9a96e" stroke-width="1.2" filter="url(#organelle-morph)" />
+                    <path d="M -13,-5 L -9,5 L -5,-5 L -1,5 L 3,-5 L 7,5 L 11,-5" fill="none" stroke="#c9a96e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+
+                <!-- Mitochondria - Quadrant 4 (Bottom Left) -->
+                <g transform="translate(170, 195) rotate(-65)">
+                  <g style="animation: float 6.5s ease-in-out infinite -3s;">
+                    <rect x="-22" y="-12" width="44" height="24" rx="12" fill="url(#greenGrad)" stroke="#c9a96e" stroke-width="1.2" filter="url(#organelle-morph)" />
+                    <path d="M -15,-6 L -10,6 L -5,-6 L 0,6 L 5,-6 L 10,6 L 15,-6" fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+
+                <!-- 2. Golgi Apparatus (Gold curved stacks) -->
+                <g transform="translate(330, 170) rotate(-15)">
+                  <g style="animation: float 8s ease-in-out infinite -4s;">
+                    <path d="M -20,-15 Q -5,-12 10,-15 M -22,-7 Q -7,-4 8,-7 M -20,1 Q -5,4 10,1 M -16,9 Q -3,11 10,9" fill="none" stroke="#c9a96e" stroke-width="2.2" stroke-linecap="round" opacity="0.8" filter="url(#soft-glow)" />
+                    <circle cx="16" cy="-14" r="2.5" fill="#c9a96e" opacity="0.7" />
+                    <circle cx="-25" cy="-6" r="2" fill="#1d7a4e" opacity="0.8" />
+                    <circle cx="18" cy="8" r="3" fill="#c9a96e" opacity="0.9" />
+                  </g>
+                </g>
+
+                <!-- Vesicle Clusters (Golgi outputs) -->
+                <g fill="#c9a96e" opacity="0.8">
+                  <circle cx="320" cy="140" r="2.5" />
+                  <circle cx="310" cy="145" r="2" />
+                  <circle cx="280" cy="330" r="3" fill="#1d7a4e" />
+                  <circle cx="288" cy="334" r="2" />
+                </g>
+
+                <!-- Centrioles (Paired barrels near nucleus) -->
+                <g transform="translate(292, 218) rotate(20)">
+                  <rect x="-3" y="-8" width="6" height="16" fill="url(#goldGrad)" rx="1.5" stroke="#c9a96e" stroke-width="0.5" />
+                  <rect x="-8" y="-3" width="16" height="6" fill="url(#goldGrad)" rx="1.5" stroke="#c9a96e" stroke-width="0.5" transform="translate(4, 4) rotate(90)" />
+                </g>
+
+                <!-- 3. Lysosome / Centrosome (Green/Gold spheres) -->
+                <g transform="translate(160, 320)">
+                  <g style="animation: float 5s ease-in-out infinite -1s;">
+                    <circle cx="0" cy="0" r="10" fill="url(#greenGrad)" stroke="#c9a96e" stroke-width="1" />
+                    <circle cx="0" cy="0" r="5" fill="#f5e6c8" opacity="0.6" filter="url(#soft-glow)" />
+                  </g>
+                </g>
+                <g transform="translate(190, 340)">
+                  <g style="animation: float 6s ease-in-out infinite -3s;">
+                    <circle cx="0" cy="0" r="6" fill="url(#goldGrad)" />
+                  </g>
+                </g>
+
+                <!-- 4. Endoplasmic Reticulum (Reticular network around nucleus) -->
+                <g opacity="0.35" fill="none" stroke="#1d7a4e" stroke-width="1.5" filter="url(#organelle-morph)">
+                  <path d="M 210,210 Q 180,220 185,250 T 205,290 M 290,210 Q 320,220 315,250 T 295,290 M 215,200 Q 250,175 285,200" />
+                  <path d="M 195,230 Q 170,240 175,260 T 195,280 M 305,230 Q 330,240 325,260 T 305,280" stroke="#c9a96e" stroke-width="1" />
+                </g>
+
+                <!-- Cell Nucleus (Living glowing core) -->
+                <circle class="cell-nucleus-body" cx="250" cy="250" r="52" fill="url(#nucleusGrad)" stroke="#c9a96e" stroke-width="1" filter="url(#organelle-morph) url(#soft-glow)" />
+                
+                <!-- Nucleolus (Central generator) -->
+                <circle cx="240" cy="242" r="16" fill="url(#nucleolusGrad)" filter="url(#soft-glow)">
+                  <animate attributeName="r" values="15;17;15" dur="4s" repeatCount="indefinite" />
+                </circle>
+
+                <!-- Chromatin (DNA threads in nucleus) -->
+                <path d="M 235,220 Q 242,228 230,240 T 255,255 T 235,275 M 265,225 Q 250,235 260,250 T 245,270" fill="none" stroke="#f5e6c8" stroke-width="1" opacity="0.4" />
+
+                <!-- DNA Double Helix wrapping through the cell -->
+                <g class="dna-helix-group" style="opacity: 0.85;">
+                  <!-- Helix 1 -->
+                  <path class="dna-strand-1" d="M 170,170 Q 200,150 250,170 T 330,170" fill="none" stroke="url(#goldGrad)" stroke-width="2" filter="url(#soft-glow)">
+                    <animate attributeName="d" values="M 170,170 Q 200,150 250,170 T 330,170; M 170,170 Q 200,190 250,170 T 330,170; M 170,170 Q 200,150 250,170 T 330,170" dur="6s" repeatCount="indefinite" />
+                  </path>
+                  <!-- Helix 2 -->
+                  <path class="dna-strand-2" d="M 170,170 Q 200,190 250,170 T 330,170" fill="none" stroke="#1d7a4e" stroke-width="1.5">
+                    <animate attributeName="d" values="M 170,170 Q 200,190 250,170 T 330,170; M 170,170 Q 200,150 250,170 T 330,170; M 170,170 Q 200,190 250,170 T 330,170" dur="6s" repeatCount="indefinite" />
+                  </path>
+                  <!-- Connectors -->
+                  <g stroke="#c9a96e" stroke-width="1" opacity="0.6">
+                    <line x1="190" y1="165" x2="190" y2="175" />
+                    <line x1="210" y1="160" x2="210" y2="180" />
+                    <line x1="230" y1="163" x2="230" y2="177" />
+                    <line x1="250" y1="170" x2="250" y2="170" />
+                    <line x1="270" y1="177" x2="270" y2="163" />
+                    <line x1="290" y1="180" x2="290" y2="160" />
+                    <line x1="310" y1="175" x2="310" y2="165" />
+                  </g>
+                </g>
+
+                <!-- Floating Ribosomes / Nutrients (Many tiny pulsing particles) -->
+                <g class="ribosomes-group">
+                  <!-- Group 1 -->
+                  <circle cx="160" cy="210" r="2" fill="#c9a96e" opacity="0.8">
+                    <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="340" cy="230" r="1.5" fill="#f5e6c8" opacity="0.7">
+                    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="210" cy="140" r="2.5" fill="#1d7a4e" opacity="0.6">
+                    <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.5s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="290" cy="360" r="2" fill="#c9a96e" opacity="0.8">
+                    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.8s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="280" cy="130" r="1.5" fill="#ffffff" opacity="0.9">
+                    <animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.8s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="140" cy="270" r="2" fill="#f5e6c8" opacity="0.5">
+                    <animate attributeName="opacity" values="0.1;0.9;0.1" dur="4s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="350" cy="260" r="2.5" fill="#1d7a4e" opacity="0.7">
+                    <animate attributeName="opacity" values="0.7;0.1;0.7" dur="3.2s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="200" cy="360" r="1.5" fill="#c9a96e" opacity="0.8">
+                    <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.2s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+              </g>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================
-       Section: Our Vision Song (NPP Anthem)
+       MARQUEE STRIP
        ========================================== -->
-  <section class="video-section" id="vision-song">
-    <div class="container">
-      <h2 class="section-title">Our Vision Song</h2>
-      <p class="section-subtitle">No Prescription Point Anthem — स्वयं सेवा सर्वोच्च सेवा</p>
-
-      <div class="video-container">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/MDGDPMRNYlM?autoplay=0&controls=1&rel=0" title="GSHER Vision Song"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+  <section class="marquee-section">
+    <div class="marquee-track" id="marquee-track">
+      {[...siteConfig.marqueeKeywords, ...siteConfig.marqueeKeywords].map((keyword) => (
+        <div class="marquee-item">
+          <span class="marquee-dot"></span>
+          {keyword}
         </div>
-      </div>
+      ))}
     </div>
   </section>
 
   <!-- ==========================================
-       Section 4: Importance of Self-Healthcare
+       ABOUT DR. MOHAPATRA
        ========================================== -->
-  <section class="diagram-section" id="importance">
+  <section class="about-section" id="about">
     <div class="container">
-      <h2 class="section-title">Importance of Self-Healthcare</h2>
-      <p class="section-subtitle">Revolutionizing healthcare through self-healthcare education and cellular revival.</p>
-
-      <div class="diagram-layout">
-        <!-- Left: Interactive Venn Diagram -->
-        <div class="diagram-visual">
-          <div class="circle-node circle-physical active-focus" data-target="physical">
-            <h4>Physical</h4>
-            <p>Cellular Nutrition & Sleep</p>
-          </div>
-          <div class="circle-node circle-mental" data-target="mental">
-            <h4>Mental</h4>
-            <p>Stress & Breathwork</p>
-          </div>
-          <div class="circle-node circle-spiritual" data-target="spiritual">
-            <h4>Spiritual</h4>
-            <p>Mindfulness & Stillness</p>
-          </div>
-        </div>
-
-        <!-- Right: Detail Panel -->
-        <div class="diagram-details">
-          <div class="diagram-details-header">
-            <div style="flex-grow: 1;">
-              <!-- Physical Details -->
-              <div class="details-panel details-panel-physical active" id="details-physical">
-                <h3>Physical Stewardship</h3>
-                <ul class="details-list">
-                  <li><strong>Cellular Nutrition:</strong> Understanding your gut microbiome and feeding cells for
-                    energy, not just taste.</li>
-                  <li><strong>Circadian Syncing:</strong> Aligning sleep-wake cycles with daylight to optimize melatonin
-                    and cortisol.</li>
-                  <li><strong>Active Living:</strong> Gentle daily movements that trigger cellular adaptation and blood
-                    flow.</li>
-                </ul>
-              </div>
-
-              <!-- Mental Details -->
-              <div class="details-panel details-panel-mental" id="details-mental">
-                <h3>Mental Resilience</h3>
-                <ul class="details-list">
-                  <li><strong>Circadian Rest:</strong> Mitigating mental burnout by prioritizing regular pauses and
-                    screen detox.</li>
-                  <li><strong>Stress Formula:</strong> Utilizing breathwork protocols to switch the nervous system from
-                    fight-or-flight to rest-and-digest.</li>
-                  <li><strong>Habit Reprogramming:</strong> Transforming negative routines into health-promoting neural
-                    pathways.</li>
-                </ul>
-              </div>
-
-              <!-- Spiritual Details -->
-              <div class="details-panel details-panel-spiritual" id="details-spiritual">
-                <h3>Spiritual Alignment</h3>
-                <ul class="details-list">
-                  <li><strong>Biological Awareness:</strong> Tuning into your body's subtle signals before they escalate
-                    into symptoms.</li>
-                  <li><strong>Intense Stillness:</strong> Practicing daily meditation to quiet the mind and reduce
-                    cellular stress.</li>
-                  <li><strong>Purposeful Life:</strong> Connecting with your innate biological intelligence and a sense
-                    of shared community.</li>
-                </ul>
-              </div>
-            </div>
+      <div class="about-grid">
+        <!-- Left: Photo -->
+        <div class="about-image-col reveal-left">
+          <div class="about-image-frame">
             <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=300,h=300,fit=crop/dWxnO74qGGcN789B/art-of-self-healthcare-3-AzGXybJkEnsGDL16.png"
-              alt="Art Of Self-Healthcare Logo" class="diagram-brand-logo">
+              src={siteConfig.founder.photoUrl}
+              alt={siteConfig.founder.photoAlt}
+            />
+            <div class="about-badge">
+              <span class="about-badge-num">28+</span>
+              <span class="about-badge-label">Years of Surgery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Bio & Credentials -->
+        <div class="about-text-col reveal-right">
+          <span class="section-tag">The Creator</span>
+          <h2 class="about-name">{siteConfig.founder.name}</h2>
+          <p class="about-role">{siteConfig.founder.title}</p>
+          <p class="about-bio">{siteConfig.founder.shortBio}</p>
+
+          <div class="credential-card">
+            <h4>Credentials</h4>
+            <ul class="credential-list">
+              {siteConfig.founder.credentials.map((cred) => (
+                <li>{cred}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <a href={`${base}/about`} class="btn-outline">
+              Know More <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -247,572 +352,176 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   </section>
 
   <!-- ==========================================
-       Section 5: Founder YouTube Video
+       SIX PILLARS OF THE PROTOCOL
        ========================================== -->
-  <section class="video-section" id="founder-video">
+  <section class="pillars-section" id="protocol">
     <div class="container">
-      <h2 class="section-title">Listen Directly from the Founder</h2>
-      <p class="section-subtitle">Hear Dr. Biswajit Mohapatra explain the philosophy of self-healthcare and cellular
-        healing.</p>
-
-      <div class="video-container">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/1f3X9Ue0Y8k?autoplay=0&controls=1&rel=0"
-            title="Dr. Mohapatra Self-Healthcare Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Section 6A: Founder & Vision Section
-       ========================================== -->
-  <section class="founder-vision-section" id="vision">
-    <div class="container">
-      <div class="founder-grid">
-        <!-- Left: Founder Image -->
-        <div class="founder-image-container">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/ima-1jpg-dOqMZQMoOPt46yeV.JPG"
-            alt="Dr. Biswajit Mohapatra, Founder of GSHER" class="founder-image">
-        </div>
-
-        <!-- Right: Vision & Quote -->
-        <div class="founder-text-content">
-          <span class="vision-tag">GSHER Leadership</span>
-          <h2 class="vision-title-main">A Vision to Promote<br>Self-Healthcare <span
-              class="accent-green">Globally</span></h2>
-          <p class="vision-desc-main">
-            Global Self-Healthcare Education and Research is a non-profit organization committed to empowering
-            individuals to take control of their own health and well-being through innovative research, cutting-edge
-            educational programs, and community outreach initiatives.
-          </p>
-
-          <blockquote class="founder-quote-block">
-            <p class="quote-text">
-              "Just like other players in the healthcare field, we do not enjoy earning money from your illness, but
-              from the effort we put in to preserve and protect your body for the rest of your life."
-            </p>
-            <cite class="quote-author">— Dr. Biswajit Mohapatra, Founder & Chairman</cite>
-          </blockquote>
-          <div style="margin-top: 25px;">
-            <a href={`${base}/about`} class="btn-primary">Learn More About Us</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Section 6B: Leadership Interview CTA Section
-       ========================================== -->
-  <section class="interview-cta-section" id="interview-cta">
-    <div class="container">
-      <div class="interview-header-row">
-        <span class="interview-cta-tag">In-Depth Discussion</span>
-        <h2 class="interview-cta-title">A Vision to Educate</h2>
-        <p class="interview-cta-desc">
-          To solve the global crisis, we must shift from a reactive hospital dependency model to a proactive self-healthcare learning environment.
+      <div class="pillars-header reveal">
+        <span class="section-tag">The {siteConfig.siteName} Protocol</span>
+        <h2 class="section-title">Six Pillars of Cellular Revival</h2>
+        <p class="section-subtitle">
+          A holistic, science-backed framework designed to heal, protect, and revive your health at the deepest biological level.
         </p>
       </div>
 
-      <div class="conversation-layout">
-        <!-- Speaker 1 (Left): President -->
-        <div class="conversation-speaker speaker-left">
-          <div class="speaker-avatar-container">
-            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=401,fit=crop/dWxnO74qGGcN789B/whatsapp-image-2023-04-22-at-22.43.45_prev_ui-Yg21LZ00rxs9gwrR.png" alt="Dr. Subhasish Das" class="speaker-avatar">
-          </div>
-          <div class="speaker-info-card">
-            <span class="speaker-name">Dr. Subhasish Das</span>
-            <span class="speaker-role">President, GSHER</span>
-          </div>
-        </div>
-
-        <!-- Conversation Snippet (Center) -->
-        <div class="conversation-bubble-container">
-          <!-- Bubble 1 -->
-          <div class="bubble bubble-left">
-            <div class="bubble-content">
-              <p class="bubble-text">Dr. Mohapatra, why is self-healthcare so critical today?</p>
+      <div class="pillars-grid">
+        {siteConfig.pillars.map((pillar, index) => (
+          <div class="pillar-card reveal" style={`transition-delay: ${index * 0.1}s`}>
+            <div class="pillar-icon">
+              <i class={`fa-solid ${pillar.icon}`}></i>
             </div>
+            <h3 class="pillar-name">{pillar.name}</h3>
+            <p class="pillar-desc">{pillar.description}</p>
           </div>
-          <!-- Bubble 2 -->
-          <div class="bubble bubble-right">
-            <div class="bubble-content">
-              <p class="bubble-text">The average person spends only 10 hours a year in front of doctors. The remaining 99.99% is self-managed health. We need to empower individuals rather than waiting for them to get sick.</p>
-            </div>
-          </div>
-          <!-- Bubble 3 -->
-          <div class="bubble bubble-left">
-            <div class="bubble-content">
-              <p class="bubble-text">GSHER focuses heavily on the proactive model. How does the CelluReva protocol fit into this shift?</p>
-            </div>
-          </div>
-          <!-- Bubble 4 -->
-          <div class="bubble bubble-right">
-            <div class="bubble-content">
-              <p class="bubble-text">Most hospitals manage illness in crisis. CelluReva helps people preserve and protect their health from the cellular level through circadian synchronization, nutrition, and stress management.</p>
-            </div>
-          </div>
-          <!-- CTA Trigger inside the chat -->
-          <div class="chat-cta-wrapper">
-            <button class="btn-accent" id="open-interview">Read Full Interview</button>
-          </div>
-        </div>
-
-        <!-- Speaker 2 (Right): Chairman -->
-        <div class="conversation-speaker speaker-right">
-          <div class="speaker-avatar-container">
-            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=407,fit=crop/dWxnO74qGGcN789B/20231006_132123_prev_ui-mjEQy15oxOFr0O5Q.png" alt="Dr. Biswajit Mohapatra" class="speaker-avatar chairman-avatar">
-          </div>
-          <div class="speaker-info-card">
-            <span class="speaker-name">Dr. Biswajit Mohapatra</span>
-            <span class="speaker-role">Chairman, GSHER</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ==========================================
-       Section 6 Sub: Dialogue Interview Modal
+       CELLUREVA PROTOCOLS
        ========================================== -->
-  <div class="interview-modal" id="interview-modal" role="dialog" aria-labelledby="modal-title-text" aria-hidden="true">
-    <div class="modal-container">
-      <div class="modal-header">
-        <span class="modal-title" id="modal-title-text">GSHER Leadership Interview</span>
-        <button class="modal-close" id="close-interview" aria-label="Close Modal">&times;</button>
-      </div>
-      <div class="modal-body">
-
-        <div class="dialogue-turn dialogue-turn-interviewer">
-          <span class="speaker speaker-interviewer">Dr. Subhasis Das (President, GSHER):</span>
-          <p class="dialogue-text">
-            Dr. Mohapatra, thank you for joining us today. Let's start with the basics: why self-healthcare?
-          </p>
-        </div>
-
-        <div class="dialogue-turn dialogue-turn-founder">
-          <span class="speaker speaker-founder">Dr. Biswajit Mohapatra (Founder):</span>
-          <p class="dialogue-text">
-            Thank you, Subhasis. Self-healthcare is not a luxury; it is a critical necessity. The average person spends
-            only about 10 hours a year in front of a doctor, representing 0.001% of the year. The remaining 99.99% is
-            spent managing health on their own. We need to empower individuals to make these choices with biological
-            intelligence rather than waiting to get sick.
-          </p>
-        </div>
-
-        <div class="dialogue-turn dialogue-turn-interviewer">
-          <span class="speaker speaker-interviewer">Dr. Subhasis Das:</span>
-          <p class="dialogue-text">
-            I understand that GSHER is working on a shift from a reactive to a proactive health model. Can you elaborate
-            on that?
-          </p>
-        </div>
-
-        <div class="dialogue-turn dialogue-turn-founder">
-          <span class="speaker speaker-founder">Dr. Biswajit Mohapatra:</span>
-          <p class="dialogue-text">
-            Absolutely. Most medical institutions are built to rescue patients in crisis. That is essential work, but it
-            does not create health—it manages illness. We want to teach people how to protect and preserve their health
-            from the cellular level using the CelluReva protocol. Treatment is when needed, but education is for a
-            lifetime.
-          </p>
-        </div>
-
-        <div class="dialogue-turn dialogue-turn-interviewer">
-          <span class="speaker speaker-interviewer">Dr. Subhasis Das:</span>
-          <p class="dialogue-text">
-            You have a unique perspective on the financial philosophy of healthcare. Could you tell us more about that?
-          </p>
-        </div>
-
-        <div class="dialogue-turn dialogue-turn-founder">
-          <span class="speaker speaker-founder">Dr. Biswajit Mohapatra:</span>
-          <p class="dialogue-text">
-            Yes. Just like other players in the healthcare field, we do not enjoy earning money from your illness, but
-            from the effort we put in to preserve and protect your body for the rest of your life. This is why we
-            operate No Prescription Point—not to prescribe drugs, but to offer wellness counseling and self-care
-            education.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================
-       Section 7: Hustle to Healing Book
-       ========================================== -->
-  <section class="book-section" id="books">
+  <section class="protocols-section" id="protocols">
     <div class="container">
-      <div class="book-grid">
-        <!-- Left: Details -->
-        <div class="book-details">
-          <span class="book-tag">Featured Publication</span>
-          <h2 class="book-title">Hustle to Healing</h2>
-          <p class="book-desc">
-            In a high-pressure world where burnout is the new badge of honor, <strong>Hustle to Healing: Live Well to
-              Lead Well</strong> offers a radical reframe: true leadership begins with personal well-being.
-          </p>
-          <p class="book-desc">
-            Guided by consultant surgeon <strong>Dr. Biswajit Mohapatra's</strong> immersive storytelling and
-            science-backed wisdom, this book takes you inside corporate corridors and cellular healing sanctuaries to
-            explore how biological rhythm, sleep, food quality, and conscious movement define your survival and
-            leadership potential.
-          </p>
-          <ul class="book-features">
-            <li>Discover the "CelluReva" framework: Reset, Revive, Reprogram, Restore.</li>
-            <li>Understand how stress and ambition translate to biological exhaustion at the cellular level.</li>
-            <li>Implement actionable protocols to restore circadian balance and double your daily energy.</li>
-          </ul>
-          <div style="margin-top: 10px;">
-            <a href="https://pages.razorpay.com/h2hbook" target="_blank" rel="noopener noreferrer"
-              class="btn-primary">Buy from Amazon</a>
-          </div>
-        </div>
-
-        <!-- Right: Book Cover -->
-        <div class="book-cover-container">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=450,fit=crop/dWxnO74qGGcN789B/brn00005-fkHy051JoVjOMZGZ.JPG"
-            alt="Hustle to Healing Book Cover" class="book-cover">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Section 8: Care for Your Health Book
-       ========================================== -->
-  <section class="book-section" id="care-book">
-    <div class="container">
-      <div class="book-grid reverse">
-        <!-- Left: Book Cover -->
-        <div class="book-cover-container">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=450,fit=crop/dWxnO74qGGcN789B/care-for-your-health_3d-cover_prev_ui-YKbPDqwJ16U09lBy.png"
-            alt="Care for Your Health Book Cover" class="book-cover">
-        </div>
-
-        <!-- Right: Details -->
-        <div class="book-details">
-          <span class="book-tag">Health User Manual</span>
-          <h2 class="book-title">Care for Your Health</h2>
-          <p class="book-desc">
-            <strong>Care for Your Health: A User Manual for Living Healthy</strong> is a comprehensive guide focusing on
-            preventive healthcare, health protection, and cellular well-being.
-          </p>
-          <p class="book-desc">
-            Learn how basic, daily elements—breathing techniques, conscious nutrition, cellular hydration, sleep
-            hygiene, and meditative pause—interact with your biological systems to prevent chronic conditions such as
-            diabetes, cancer, and hypertension.
-          </p>
-          <ul class="book-features">
-            <li>Introduces the <strong>S.T.R.E.S.S. Formula</strong> for effective nervous system regulation.</li>
-            <li>Offers a practical diet chart that shifts the paradigm: "The best diet chart is no diet chart at all."
-            </li>
-            <li>Empowers families with direct biological self-care guidelines.</li>
-          </ul>
-          <div style="margin-top: 10px;">
-            <a href="https://www.amazon.in/Care-Your-Health-Manual-Healthy/dp/1645465039/" target="_blank"
-              rel="noopener noreferrer" class="btn-primary">Buy from Amazon</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Section 9: Perfect Health Secrets Series
-       ========================================== -->
-  <section class="series-section" id="videos">
-    <div class="container">
-      <h2 class="section-title">Perfect Health Secrets Series</h2>
-      <p class="section-subtitle">Watch the core modules of our health education curriculum. Discover the hidden science
-        of healing.</p>
-
-      <div class="videos-grid">
-        <!-- Video 1 -->
-        <div class="video-card">
-          <div class="video-thumbnail-container" data-video-id="yu07KxRINi0">
-            <img src="https://i.ytimg.com/vi/yu07KxRINi0/hqdefault.jpg" alt="Introduction to Perfect Health Secrets"
-              class="video-thumbnail">
-            <div class="play-button-overlay"><span></span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-card-tag">Module 1</span>
-            <h3 class="video-card-title">Introduction to Perfect Health Secrets</h3>
-            <p class="video-card-desc">Why should we learn about health? A masterclass detailing the difference between
-              medical education and health education.</p>
-          </div>
-        </div>
-
-        <!-- Video 2 -->
-        <div class="video-card">
-          <div class="video-thumbnail-container" data-video-id="3uC53GUumjQ">
-            <img src="https://i.ytimg.com/vi/3uC53GUumjQ/hqdefault.jpg" alt="We are a Body of Minds"
-              class="video-thumbnail">
-            <div class="play-button-overlay"><span></span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-card-tag">Module 2</span>
-            <h3 class="video-card-title">We are a Body of Minds</h3>
-            <p class="video-card-desc">The new biology reveals that we have more minds than we thought. Learn how
-              cellular intelligence coordinates systemic health.</p>
-          </div>
-        </div>
-
-        <!-- Video 3 -->
-        <div class="video-card">
-          <div class="video-thumbnail-container" data-video-id="Nip7EyN3GzA">
-            <img src="https://i.ytimg.com/vi/Nip7EyN3GzA/hqdefault.jpg" alt="Circadian Rhythms & Inner Clocks"
-              class="video-thumbnail">
-            <div class="play-button-overlay"><span></span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-card-tag">Module 3</span>
-            <h3 class="video-card-title">Circadian Rhythms & Inner Clocks</h3>
-            <p class="video-card-desc">How internal master clocks regulate hormones, digestion, sleep cycles, and
-              metabolic health. Why disruption leads to disease.</p>
-          </div>
-        </div>
-
-        <!-- Video 4 -->
-        <div class="video-card">
-          <div class="video-thumbnail-container" data-video-id="RGjfUhSjiKk">
-            <img src="https://i.ytimg.com/vi/RGjfUhSjiKk/hqdefault.jpg" alt="No Prescription Point (NPP) Philosophy"
-              class="video-thumbnail">
-            <div class="play-button-overlay"><span></span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-card-tag">Module 4</span>
-            <h3 class="video-card-title">No Prescription Point (NPP) Philosophy</h3>
-            <p class="video-card-desc">A deep dive into how self-counseling and proactivity bypass standard drug
-              dependency. Healing from the inside out.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="series-action">
-        <a href="https://www.youtube.com/@drbiswajitspeaks" target="_blank" rel="noopener noreferrer"
-          class="btn-primary">View All Episodes</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Section 10: No Prescription Point Banner
-       ========================================== -->
-  <section class="split-banner-section dark" id="npp">
-    <div class="container">
-      <div class="split-banner-grid">
-        <!-- Left: Text -->
-        <div class="banner-content">
-          <span class="banner-tag">Health Center Initiative</span>
-          <h2 class="banner-title">No Prescription Point (NPP)</h2>
-          <p class="banner-desc">
-            No Prescription Point is a landmark initiative of the <strong>Global Self-Healthcare Education and Research
-              (GSHER) Trust</strong>. It represents a paradigm shift in our daily health culture.
-          </p>
-          <p class="banner-desc">
-            We provide comprehensive self-healthcare counseling, educational modules, and support systems to empower
-            individuals to make informed decisions for a healthier, prescription-free life.
-          </p>
-          <div>
-            <a href="#contact" class="btn-primary"
-              style="background-color: var(--color-accent); color: var(--color-primary-dark);">Request Counseling</a>
-          </div>
-        </div>
-
-        <!-- Right: Image -->
-        <div class="banner-image-container">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,fit=crop/dWxnO74qGGcN789B/img_20240730_072040431-YNqryZvgOQSl765z.jpg"
-            alt="No Prescription Point Center" class="banner-image">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Section 11: IMWRC Section
-       ========================================== -->
-  <section class="split-banner-section" id="imwrc">
-    <div class="container">
-      <div class="split-banner-grid reverse">
-        <!-- Left: Image -->
-        <div class="banner-image-container">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,fit=crop/dWxnO74qGGcN789B/imwrai-YBgEZxyJ10sBvbLz.jpg"
-            alt="Institute of Health and Medical Wellness Research Centre" class="banner-image">
-        </div>
-
-        <!-- Right: Text -->
-        <div class="banner-content">
-          <span class="banner-tag">Research & Education</span>
-          <h2 class="banner-title">Institute of Health and Medical Wellness Research Centre</h2>
-          <p class="banner-desc">
-            <strong>GSHER</strong> is building the first of its kind <strong>Institute of Health and Medical Wellness
-              Research Centre (IMWRC)</strong>.
-          </p>
-          <p class="banner-desc">
-            Our goal is to power the wellness culture of India by training a new cadre of healthcare professionals:
-            <strong>Self-Healthcare Educators</strong>. These educators will focus on health protection, biological
-            intelligence, and patient self-care counseling.
-          </p>
-          <div>
-            <a href="#contact" class="btn-outline">Support the Research</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       Section 12: Self-Healthcare Education (WHO)
-       ========================================== -->
-  <section class="who-section" id="who-framework">
-    <div class="container">
-      <div class="who-card">
-        <div class="who-header">
-          <span class="who-badge">Global Standard</span>
-          <h3 class="who-title">World Health Organization (WHO)</h3>
-        </div>
-        <p class="who-quote">
-          "Self-care is the ability of individuals, families, and communities to promote health, prevent disease,
-          maintain health, and cope with illness and disability with or without the support of a healthcare provider."
-        </p>
-        <p class="who-analysis">
-          GSHER's curriculum is structurally aligned with the WHO self-care guidelines. By educating people about
-          circadian rhythms, biology, and nutrition, we bridge the gap between needing health and wanting
-          health—empowering you to take charge of the 8,750 hours of the year spent outside the doctor's clinic.
+      <div class="protocols-header reveal">
+        <span class="section-tag">Specialized Protocols</span>
+        <h2 class="section-title">CelluReva™ Protocols</h2>
+        <p class="section-subtitle">
+          Tailored cellular health programs for every dimension of life — from leadership and parenting to chronic disease reversal.
         </p>
       </div>
-    </div>
-  </section>
 
-  <!-- ==========================================
-       Section 13: Photo Grid
-       ========================================== -->
-  <section class="gallery-section" id="gallery">
-    <div class="container">
-      <h2 class="section-title">Activities & Movement</h2>
-      <p class="section-subtitle">Glimpses of community training, student workshops, and self-healthcare programs led by
-        GSHER.</p>
-
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/img_0969-AR0VxWe507sn3rRx.JPG"
-            alt="GSHER Training Event">
-        </div>
-        <div class="gallery-item">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/img-20190425-wa0023-AMq2QrO1GwSJW9M5.jpg"
-            alt="Doctor Speaks Seminar">
-        </div>
-        <div class="gallery-item">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/111-Yan7xaeMovTj3Lxn.png"
-            alt="Self-Healthcare Workshop">
-        </div>
-        <div class="gallery-item">
-          <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=300,fit=crop/dWxnO74qGGcN789B/ima-1jpg-dOqMZQMoOPt46yeV.JPG"
-            alt="Patient Wellness Camp">
-        </div>
+      <!-- Filter Tabs -->
+      <div class="protocols-tabs reveal" id="protocol-tabs">
+        {siteConfig.protocolCategories.map((cat, i) => (
+          <button
+            class={`protocol-tab ${i === 0 ? 'active' : ''}`}
+            data-filter={cat.key}
+            type="button"
+          >
+            {cat.label}
+          </button>
+        ))}
       </div>
-    </div>
-  </section>
 
-  <!-- ==========================================
-       Section 14: Blog Section
-       ========================================== -->
-  <section class="blog-section" id="blog">
-    <div class="container">
-      <h2 class="section-title">Latest from Our Blog</h2>
-      <p class="section-subtitle">Stay informed with medical essays, patient stories, and wellness guidelines written by
-        Dr. Biswajit Mohapatra.</p>
-
-      <div class="blog-grid">
-        <!-- Post 1 -->
-        <article class="blog-card">
-          <a href="https://www.globalselfhealthcare.org/surgeons-dilemma" target="_blank" class="blog-card-img-link">
-            <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=250,fit=crop/dWxnO74qGGcN789B/tribal-painting-india-21896771-YD0BGEVp43hQM8vn.webp"
-              alt="A Surgeon’s Dilemma" class="blog-card-img">
+      <!-- Protocol Cards Grid -->
+      <div class="protocols-grid" id="protocols-grid">
+        {siteConfig.protocols.map((protocol, index) => (
+          <a
+            href={protocol.link}
+            class="protocol-card reveal"
+            data-category={protocol.category}
+            style={`transition-delay: ${index * 0.08}s`}
+          >
+            <div class="protocol-icon-wrap">
+              <i class={`fa-solid ${protocol.icon}`}></i>
+            </div>
+            <span class="protocol-category-tag">{protocol.category}</span>
+            <h3 class="protocol-name">{protocol.name}</h3>
+            <p class="protocol-desc">{protocol.description}</p>
+            <span class="protocol-cta">
+              Learn More <i class="fa-solid fa-arrow-right"></i>
+            </span>
           </a>
-          <div class="blog-card-content">
-            <span class="blog-card-meta">Narrative Journey • Feb 2, 2025</span>
-            <h3 class="blog-card-title">A Surgeon’s Dilemma: Faith vs. Protocol</h3>
-            <p class="blog-card-desc">Punni Majhi's Journey—Part 2/5: A surgeon's profound revelation from the core of
-              his heart on patients' circadian rhythms and inner biology.</p>
-            <a href="https://www.globalselfhealthcare.org/surgeons-dilemma" target="_blank" class="blog-card-link">Read
-              Article &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Post 2 -->
-        <article class="blog-card">
-          <a href="https://www.globalselfhealthcare.org/the-uniqueness-of-the-cellureva-protocol-part-i" target="_blank"
-            class="blog-card-img-link">
-            <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=250,fit=crop/dWxnO74qGGcN789B/1-AGBzrnwV8asEOeP8.png"
-              alt="CelluReva Protocol" class="blog-card-img">
-          </a>
-          <div class="blog-card-content">
-            <span class="blog-card-meta">Protocol Guide • Sep 28, 2025</span>
-            <h3 class="blog-card-title">The Uniqueness of the "CelluReva" Protocol: Part I</h3>
-            <p class="blog-card-desc">CelluReva integrates yoga, biology, sleep, and mindset into an aligned cellular
-              healing ecosystem for chronic disease reversal.</p>
-            <a href="https://www.globalselfhealthcare.org/the-uniqueness-of-the-cellureva-protocol-part-i"
-              target="_blank" class="blog-card-link">Read Article &rarr;</a>
-          </div>
-        </article>
-
-        <!-- Post 3 -->
-        <article class="blog-card">
-          <a href="https://www.globalselfhealthcare.org/from-self-care-to-cell-care-part-2" target="_blank"
-            class="blog-card-img-link">
-            <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=400,h=250,fit=crop/dWxnO74qGGcN789B/1757438211927-Awv8XjqZ5Bh7G8bp.png"
-              alt="Self-Care to Cell-Care" class="blog-card-img">
-          </a>
-          <div class="blog-card-content">
-            <span class="blog-card-meta">Cellular Health • Sep 11, 2025</span>
-            <h3 class="blog-card-title">From Self-Care to Cell-Care: Part II</h3>
-            <p class="blog-card-desc">Every breath, meal, and thought is a cellular signal. Discover why your long-term
-              health depends on shifting from self-care to cell-care.</p>
-            <a href="https://www.globalselfhealthcare.org/from-self-care-to-cell-care-part-2" target="_blank"
-              class="blog-card-link">Read Article &rarr;</a>
-          </div>
-        </article>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ==========================================
-       Section 15: Join the Movement CTA
+       HOW IT WORKS — 5-STEP JOURNEY
        ========================================== -->
-  <section class="cta-section" id="membership">
+  <section class="steps-section" id="how-it-works">
     <div class="container">
-      <div class="cta-container">
-        <h2 class="cta-title">Join the Self-Healthcare Movement</h2>
-        <p class="cta-desc">
-          Become a member of the Global Self-Healthcare Education and Research movement. Access our training modules,
-          join workshops, and help us establish the first Wellness Research Centre in India.
+      <div class="steps-header reveal">
+        <span class="section-tag">Your Healing Journey</span>
+        <h2 class="section-title">How {siteConfig.siteName} Works</h2>
+        <p class="section-subtitle">
+          A transformative 5-step journey from biological breakdown to lasting cellular vitality.
         </p>
-        <a href="#contact" class="btn-primary"
-          style="background-color: var(--color-accent); color: var(--color-primary-dark);">Become a Member</a>
+      </div>
+
+      <div class="steps-track">
+        {siteConfig.steps.map((step, index) => (
+          <a href={step.link} class="step-card reveal" style={`transition-delay: ${index * 0.12}s`}>
+            <div class="step-number">{index + 1}</div>
+            <div class="step-content">
+              <h3 class="step-name">{step.name}</h3>
+              <p class="step-desc">{step.description}</p>
+              <span class="step-link">
+                Explore <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ==========================================
-       Section 16: Footer & Contact Section
+       BOOKS SECTION
        ========================================== -->
+  <section class="books-section" id="books">
+    <div class="container">
+      <div class="books-header reveal">
+        <span class="section-tag">Publications</span>
+        <h2 class="section-title">Books by {siteConfig.founder.name}</h2>
+        <p class="section-subtitle">
+          Deeply human, science-rooted guides that explore healing at the cellular level.
+        </p>
+      </div>
+
+      <div class="books-grid">
+        {siteConfig.books.map((book) => (
+          <div class="book-card reveal">
+            <div class="book-cover-wrap">
+              <img src={book.imageUrl} alt={book.imageAlt} />
+            </div>
+            <div class="book-info">
+              <span class="book-label">Featured Publication</span>
+              <h3>{book.title}</h3>
+              <p class="book-subtitle">{book.subtitle}</p>
+              <p>{book.description}</p>
+              <ul class="book-features">
+                {book.features.map((feature) => (
+                  <li>{feature}</li>
+                ))}
+              </ul>
+              <div style="margin-top: 12px;">
+                {book.isInternal ? (
+                  <a href={`${base}${book.buyLink}`} class="btn-primary">
+                    {book.buyText} <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                ) : (
+                  <a href={book.buyLink} target="_blank" rel="noopener noreferrer" class="btn-primary">
+                    <i class="fa-brands fa-amazon"></i> {book.buyText}
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BOOKING CTA
+       ========================================== -->
+  <section class="booking-cta-section" id="book-consultation">
+    <div class="container">
+      <div class="booking-cta-content reveal">
+        <span class="section-tag">Take the First Step</span>
+        <h2>Ready to Transform Your Health?</h2>
+        <p>
+          Connect with {siteConfig.founder.name} and begin your personalized {siteConfig.siteName} journey.
+          Your cells are waiting to heal.
+        </p>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Book Your Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
 </Layout>
